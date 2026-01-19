@@ -52,7 +52,7 @@ public class AnggotaController {
 
     @PostMapping
     public AnggotaModel creteAnggota(@RequestBody AnggotaModel anggota) {
-        log.info("Request received", kv("action", "CREATE"), kv("nama", anggota.getNama()));
+        log.info("Request received", kv("action", "CREATE"), kv("nim", anggota.getNim()));
         AnggotaModel result = anggotaService.createAnggota(anggota);
         log.info("Request completed", kv("action", "CREATE"), kv("status", "SUCCESS"), kv("id", result.getId()));
         return result;
