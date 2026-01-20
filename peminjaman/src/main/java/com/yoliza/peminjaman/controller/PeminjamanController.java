@@ -82,7 +82,7 @@ public class PeminjamanController {
         log.info("Query received", kv("action", "GET_BY_ID"), kv("type", "QUERY"), kv("id", id));
         PeminjamanDTO peminjaman = getByIdHandler.handle(new GetPeminjamanByIdQuery(id));
         if (peminjaman != null) {
-            log.info("Query completed", kv("action", "GET_BY_ID"), kv("status", "SUCCESS"), kv("id", id));
+            log.info("Query completed", kv("action", "GET_BY_ID"), kv("status", "yes"), kv("id", id));
             return ResponseEntity.ok(peminjaman);
         } else {
             log.warn("Query completed", kv("action", "GET_BY_ID"), kv("status", "NOT_FOUND"), kv("id", id));
